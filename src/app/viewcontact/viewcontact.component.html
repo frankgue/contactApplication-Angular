@@ -1,0 +1,75 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <p class="h3 fw-bold text-primary">
+        <i class="fa fa-eye"></i>&nbsp; View Contact
+      </p>
+      <p class="fst-italic">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+        mollis finibus felis, id tincidunt eros dictum ac. Duis at semper mi.
+        Curabitur scelerisque euismod sem finibus rutrum. Curabitur a mauris
+        quis sapien tristique imperdiet feugiat et nibh. Suspendisse volutpat
+        tortor ut tempor posuere. Maecenas eu ante odio. Morbi consectetur
+        imperdiet felis, quis egestas libero eleifend id. In vitae leo ac justo
+        efficitur rhoncus et at quam. Vivamus ullamcorper lectus vel turpis
+        placerat, eget dictum risus posuere. Integer non tortor eget est gravida
+        feugiat. Mauris bibendum non nunc in molestie. Quisque in congue enim, a
+        hendrerit tellus
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Condition based Spinner and Error message code here  -->
+<!-- Condition Based Loading -->
+<div *ngIf="loading">
+  <app-spinner></app-spinner>
+</div>
+
+<div *ngIf="!loading && errorMessage">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="h4 text-danger fw-bold">{{ errorMessage }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- View Contact -->
+<div class="container" *ngIf="!loading && isNotEmpty()">
+  <div class="row align-item-center">
+    <div class="col-sm-4">
+      <img src="{{ contact.photo }}" alt="user" class="contact-img-details" />
+    </div>
+    <div class="col-sm-6">
+      <ul class="list-group">
+        <li class="list-group-item">
+          Name: <span class="fw-bold">{{ contact.name }}</span>
+        </li>
+        <li class="list-group-item">
+          Email: <span class="fw-bold">{{ contact.email }}</span>
+        </li>
+        <li class="list-group-item">
+          Mobile: <span class="fw-bold">{{ contact.mobile }}</span>
+        </li>
+        <li class="list-group-item">
+          Company: <span class="fw-bold">{{ contact.company }}</span>
+        </li>
+        <li class="list-group-item">
+          Title: <span class="fw-bold">{{ contact.title }}</span>
+        </li>
+        <li class="list-group-item">
+          Group Name: <span class="fw-bold">{{group.name}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col">
+      <a routerLink="/" class="btn btn-warning"
+        ><i class="fa fa-arrow-alt-circle-left"></i>&nbsp;Go Back</a
+      >
+    </div>
+  </div>
+</div>

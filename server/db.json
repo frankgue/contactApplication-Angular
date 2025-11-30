@@ -1,0 +1,46 @@
+{
+  "contacts": [
+    {
+      "id": "f806",
+      "name": "Frank Cabrel GUEKENG KUETI",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtuphMb4mq-EcVWhMVT8FCkv5dqZGgvn_QiA&s",
+      "email": "frankguekeng@gmail.com",
+      "mobile": "0698723544",
+      "company": "GKFCSOLUTION SAARL",
+      "title": "Frank GUEKENG",
+      "groupId": "GFD15"
+    },
+    {
+      "id": "4fa0",
+      "name": "Frank Cabrel",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN0amZ6JYcXM__iA-qeenidfFtXyfeIPaZMw&s",
+      "email": "frankcabrel@yahoo.fr",
+      "mobile": "0698723599",
+      "company": "BreeShop SARL",
+      "title": "Brenda",
+      "groupId": "GFD15"
+    }
+  ],
+  "groups": [
+    {
+      "id": "GFD14",
+      "name": "Collegue"
+    },
+    {
+      "id": "GFD15",
+      "name": "Familly"
+    },
+    {
+      "id": "GFD16",
+      "name": "Friend"
+    },
+    {
+      "id": "NFD17",
+      "name": "Service"
+    },
+    {
+      "id": "NFD18",
+      "name": "Social"
+    }
+  ]
+}

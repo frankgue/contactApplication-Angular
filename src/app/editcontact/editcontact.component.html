@@ -1,0 +1,97 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <p class="h3 fw-bold text-primary">
+        <i class="fa fa-pen"></i>&nbsp; Edit Contact
+      </p>
+      <p class="fst-italic">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+        mollis finibus felis, id tincidunt eros dictum ac. Duis at semper mi.
+        Curabitur scelerisque euismod sem finibus rutrum. Curabitur a mauris
+        quis sapien tristique imperdiet feugiat et nibh. Suspendisse volutpat
+        tortor ut tempor posuere. Maecenas eu ante odio. Morbi consectetur
+        imperdiet felis, quis egestas libero eleifend id. In vitae leo ac justo
+        efficitur rhoncus et at quam. Vivamus ullamcorper lectus vel turpis
+        placerat, eget dictum risus posuere. Integer non tortor eget est gravida
+        feugiat. Mauris bibendum non nunc in molestie. Quisque in congue enim, a
+        hendrerit tellus
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Condition based Spinner and Error message code here  -->
+<!-- Condition Based Loading -->
+<div *ngIf="loading">
+  <app-spinner></app-spinner>
+</div>
+
+<div *ngIf="!loading && errorMessage">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="h4 text-danger fw-bold">{{ errorMessage }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Edit Contact -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <form [formGroup]="formValue" (ngSubmit)="submit()">
+        <div class="mb-2">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            formControlName="name"
+          />
+        </div>
+        <div class="mb-2">
+          <label for="photo" class="form-label">Photo Url</label>
+          <input type="text" class="form-control" id="photo" name="photo" formControlName="photo"/>
+        </div>
+        <div class="mb-2">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" formControlName="email" />
+        </div>
+        <div class="mb-2">
+          <label for="mobile" class="form-label">Mobile</label>
+          <input type="tel" class="form-control" id="mobile" name="mobile" formControlName="mobile"/>
+        </div>
+        <div class="mb-2">
+          <label for="company" class="form-label">Company</label>
+          <input type="text" class="form-control" id="company" name="company" formControlName="company" />
+        </div>
+        <div class="mb-2">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" name="title" formControlName="title" />
+        </div>
+        <div class="mb-2" *ngIf="groups.length > 0">
+          <label for="groupId" class="form-label">Select Group</label>
+          <select class="form-select" id="groupId" name="groupId" formControlName="groupId">
+            <option *ngFor="let group of groups" [value]="group.id" >
+              {{ group.name }}
+            </option>
+          </select>
+        </div>
+        <div class="mb-2">
+          <input type="submit" class="btn btn-primary" value="Update" />
+          <a routerLink="/" class="btn btn-warning ms-2">Close</a>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-4">
+      <img
+        [src]="contact.photo"
+        alt="user"
+        class="contact-img"
+      />
+    </div>
+  </div>
+</div>
